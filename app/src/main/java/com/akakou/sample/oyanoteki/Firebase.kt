@@ -4,12 +4,13 @@ import android.content.Context
 import android.telecom.Call
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
 import java.util.*
 
 
-class Log(_type: String, _time: String) {
+class Log(_type: String, _time: Date) {
     val type: String? = _type
-    val time: String? = _type
+    val time: Date? = _time
 }
 
 
@@ -30,7 +31,11 @@ class Firebase() {
                     if (task.isSuccessful) {
                         for (document in task.result) {
                             val type: String = document.data.get("type").toString()
-                            val time: String = document.data.get("data").toString()
+                            val timeStr: String = document.data.get("time").toString()
+
+                            val sdFormat = SimpleDateFormat("yyyy/MM/dd hh:mm:ss")
+                            val time = sdFormat.parse(timeStr)
+
                             val log = Log(type, time)
                             logList.add(log)
                         }
@@ -41,16 +46,6 @@ class Firebase() {
     }
 
     fun print(context: Context) {
-        class CallBack() : FirebaseCallback {
-            override fun callback(logList: MutableList<Log>) {
-                for (data in logList) {
-                    val type = data.type
-                    val time = data.time
-                    Toast.makeText(context, "time:$time\ntype:$type", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
 
-        sync(CallBack())
     }
 }

@@ -38,11 +38,19 @@ dependencies {
     compile "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
     implementation 'com.google.firebase:firebase-core:16.0.1'
     compile 'com.google.firebase:firebase-firestore:15.0.0'
-
+    compile 'com.github.PhilJay:MPAndroidChart:v2.1.5'
 }
+
 
 repositories {
     maven { url "http://dl.bintray.com/kotlin/kotlin-eap-1.1" }
+    maven { url 'https://jitpack.io' }
 }
 
 apply plugin: 'com.google.gms.google-services'
+
+android {
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+}
