@@ -36,7 +36,7 @@ class MainService : IntentService("MainService") {
             try {
                 var data = UDP.receive()
 
-                if (data == 'E'.toByte()) {
+                if (data == 'W'.toByte()) {
                     handler.post {
                         Toast.makeText(applicationContext, "奴が近づいている…\n気をつけろ…", Toast.LENGTH_SHORT).show()
                     }
