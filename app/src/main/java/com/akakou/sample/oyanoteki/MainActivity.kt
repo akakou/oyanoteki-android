@@ -12,5 +12,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        thread {
+            launch (UI) {
+                Toast.makeText(this@MainActivity, "hogehoge", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
