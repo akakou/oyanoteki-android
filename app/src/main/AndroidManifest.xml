@@ -20,6 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FrontGraph" />
+        <activity android:name=".DoorGraph" />
+        <activity android:name=".LogActivity"></activity>
     </application>
 
 </manifest>

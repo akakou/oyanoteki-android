@@ -3,15 +3,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/chart"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/listView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/launch_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Launch"
+            android:onClick="onClick"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/door_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Door Graph"
+            android:onClick="onClick"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/front_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Front Graph"
+            android:onClick="onClick" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/log_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Log"
+            android:onClick="onClick" />
+    </LinearLayout>
 
 </RelativeLayout>
